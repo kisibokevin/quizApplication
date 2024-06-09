@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">100 JS Questions</h1>
+        <div class="dashboard">
+            <div class="wrapper">
+                <div id="questionsContainer" class="questionContainer">
+                    <p id="question"></p>
+                    <ul id="choices">
+                        
+                    </ul>
+                </div>
+                <div class="pgContainer" id="pagination-container">
+                    <button class="pgButtons" id="prev-btn">Prev</button>
+                    <button class="pgButtons" id="next-btn">Next</button>
+                </div>
+            </div>
+            <div class="scoreBoard">
+                <div class="totalQuestions">
+                    <h2>Total Questions</h2>                 
+                </div>
+                <div class="correctAnswers">
+                    <h2>Correctly Answered</h2>
+                </div>
+                <div class="wrongAnswers">
+                    <h2>Wrongly Answered</h2>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
