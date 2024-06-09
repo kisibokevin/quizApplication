@@ -466,6 +466,7 @@ correct: 0
 const questionElement = document.getElementById("question");
 const nextButton = document.getElementById("next-btn");
 const prevButton = document.getElementById("prev-btn");
+const finishBtn = document.getElementById("finish-btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -475,11 +476,13 @@ function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
-    showQuestion();
+    showQuestion(currentQuestionIndex);
 }
 
 
-function showQuestion() {
+function showQuestionInOneContainer() {
+
+    // this will show all the questions from the array together with the options
     const questionsContainer = document.getElementById('questionsContainer');
     questionsContainer.innerHTML = ''; // Clear previous content
 
@@ -501,6 +504,65 @@ function showQuestion() {
         questionsContainer.appendChild(optionsContainer);
     });
 }
+
+function showQuestion(index) {
+    // this will display only one question at a time
+
+    const questionsContainer = document.getElementById('questionsContainer');
+    questionsContainer.innerHTML = ''; // Clear previous content
+
+    let questionNumber = currentQuestionIndex + 1;
+
+    const questionElement = document.createElement('p');
+    questionElement.className = 'question';
+    questionElement.textContent = questionNumber + ". " + questions[currentQuestionIndex].question;
+    questionsContainer.appendChild(questionElement);
+
+    const optionsContainer = document.createElement('ul');
+    optionsContainer.className = 'options';
+    
+    questions[currentQuestionIndex].options.forEach((option) => {
+        const li = document.createElement('li');
+        li.textContent = option;
+        li.className = 'option';
+
+        li.addEventListener('click', () => {
+            if (li.textContent === questions[currentQuestionIndex].options[questions[currentQuestionIndex].correct]) {
+                li.classList.add('correct');
+                score++;
+            } else {
+                li.classList.add('wrong');
+            }
+        })
+        optionsContainer.appendChild(li);
+    });
+    questionsContainer.appendChild(optionsContainer);
+
+    /** 
+     * This line of code is setting the display style property of the prevButton 
+     * element to 'none' if the currentQuestionIndex is 0, and to 'block' otherwise.
+    */
+    prevButton.style.display = currentQuestionIndex === 0 ? 'none' : 'block ';
+    finishBtn.style.display = index === questions.length - 1 ? 'block' : 'none';
+
+};
+
+nextButton.addEventListener('click', () => {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion(currentQuestionIndex);
+    }
+    
+});
+
+
+prevButton.addEventListener('click', () => {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showQuestion(currentQuestionIndex);
+    }
+});
+
 
 
 startQuiz();

@@ -15,27 +15,35 @@
     <div class="container">
         <h1 class="title">100 JS Questions</h1>
         <div class="dashboard">
-            <div class="wrapper">
+            <div id="wrapper" class="wrapper">
                 <div id="questionsContainer" class="questionContainer">
                     <p id="question"></p>
                     <ul id="choices">
-                        
+
                     </ul>
                 </div>
                 <div class="pgContainer" id="pagination-container">
                     <button class="pgButtons" id="prev-btn">Prev</button>
                     <button class="pgButtons" id="next-btn">Next</button>
+                    <button class="pgButtons" id="finish-btn">Finish</button>
                 </div>
             </div>
             <div class="scoreBoard">
-                <div class="totalQuestions">
-                    <h2>Total Questions</h2>                 
+                <div class="totalQuestions boards">
+                    <h2 >Total</h2> 
+                    <h3 id="total">100</h3>                
                 </div>
-                <div class="correctAnswers">
-                    <h2>Correctly Answered</h2>
+                <div class="status boards">
+                    <h2 >Status</h2>
+                    <h3 id="status">Passed</h3>
                 </div>
-                <div class="wrongAnswers">
-                    <h2>Wrongly Answered</h2>
+                <div class="correctAnswers boards">
+                    <h2>Correct</h2>
+                    <h3 id="correct">70</h3>
+                </div>
+                <div class="wrongAnswers boards">
+                    <h2>Wrong</h2>
+                    <h3 id="wrong">30</h3>
                 </div>
             </div>
 
