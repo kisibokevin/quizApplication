@@ -132,3 +132,5 @@ prevButton.addEventListener('click', () => {
 finishBtn.addEventListener('click', calculateScore);
 
 startQuiz();
+
+// version 1.3
