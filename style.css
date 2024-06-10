@@ -7,13 +7,20 @@
 
 body{
     background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
+    min-width: 100wh;
 
 }
 
+.container{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -32,10 +39,11 @@ body{
 .dashboard{
     display: flex;
     gap: 30px;
+    margin: 0 auto;
 }
 .questionContainer{ 
-    width: 700px;
-    height: 500px;
+    width: 600px;
+    height: 400px;
     margin-top: 30px;
     background-color: #eceff1;
     border-radius: 10px;
@@ -82,6 +90,10 @@ body{
     text-transform: capitalize;
 }
 
+.option.selected {
+    background-color: #a5d6a7;
+}
+
 .option:hover{
     background-color: #b0bec5;
     cursor: pointer;
@@ -109,7 +121,7 @@ body{
     background-color: #0d47a1;
     color: #fff;
 }
-
+/*
 .correct{
     background-color: #a5d6a7;
 }
@@ -117,7 +129,7 @@ body{
 .wrong{
     background-color: #ef9a9a;
 }
-
+*/
 
 .scoreBoard{
     width: 500px;
@@ -163,7 +175,6 @@ body{
 
 .totalQuestions{
     border: 6px solid #0056b3;
-   
 }
 .correctAnswers {
     border: 6px solid #28a745;
